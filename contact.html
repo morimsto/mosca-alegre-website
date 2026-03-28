@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Mosca Alegre</title>
+  <meta name="description" content="Contact Mosca Alegre to discuss bringing your product to the Japanese market. Free product assessment available.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Mosca<span>.</span>Alegre</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="track-record.html">Track Record</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta active">Contact Us</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Contact Us</p>
+      <h1>Let's Start a Conversation</h1>
+      <p>Tell us about your product and we'll assess its potential in the Japanese market.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <h2>Send Us a Message</h2>
+          <p style="margin-bottom:32px;">Fill out the form below and we'll get back to you within 2 business days.</p>
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoglgy" method="POST">
+            <!-- Honeypot: hidden from humans, bots will fill it -->
+            <div style="position:absolute;left:-9999px;" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <!-- Timestamp for time-based check -->
+            <input type="hidden" id="form-loaded" name="_gotcha" value="">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith">
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your Company Inc.">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="product-url">Product URL</label>
+              <input type="url" id="product-url" name="product-url" placeholder="https://your-product-page.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your product and what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="submit-btn">Send Message &rarr;</button>
+          </form>
+        </div>
+        <div>
+          <div class="contact-info">
+            <h3>Other Ways to Reach Us</h3>
+
+            <div class="contact-detail">
+              <h4>Location</h4>
+              <p>Tokyo, Japan</p>
+            </div>
+
+            <div class="contact-detail">
+              <h4>Business Hours</h4>
+              <p>Monday – Friday, 9:00 – 18:00 JST</p>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;background:var(--bg-alt);border-radius:var(--radius);padding:32px;">
+            <h3 style="margin-bottom:16px;">Frequently Asked Questions</h3>
+
+            <div style="margin-bottom:20px;">
+              <h4 style="font-size:0.9rem;margin-bottom:4px;">What types of products do you work with?</h4>
+              <p style="font-size:0.85rem;">We work with consumer products across technology, gadgets, lifestyle, outdoor, and specialty categories — as long as there's a clear fit for the Japanese market.</p>
+            </div>
+
+            <div style="margin-bottom:20px;">
+              <h4 style="font-size:0.9rem;margin-bottom:4px;">Do you handle regulatory certifications?</h4>
+              <p style="font-size:0.85rem;">Yes. We manage PSE, TELEC, food import, and other required Japanese certifications on your behalf.</p>
+            </div>
+
+            <div>
+              <h4 style="font-size:0.9rem;margin-bottom:4px;">Is there an upfront cost?</h4>
+              <p style="font-size:0.85rem;">The initial product assessment is free. Specific terms and costs are discussed on a case-by-case basis once we determine mutual fit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Mosca<span>.</span>Alegre</div>
+          <p style="font-size:0.85rem;">Your Gateway to the Japanese Market</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="track-record.html">Track Record</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Mosca Alegre, LLC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
