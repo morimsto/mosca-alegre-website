@@ -439,7 +439,8 @@ section { padding: 80px 0; }
   align-items: flex-start;
   margin-bottom: 32px;
 }
-.footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; display: inline-flex; align-items: center; gap: 10px; }
+.footer-logo-icon { width: 28px; height: 28px; flex-shrink: 0; display: block; }
 .footer-logo span { color: var(--accent); }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 0.85rem; transition: color var(--transition); }
