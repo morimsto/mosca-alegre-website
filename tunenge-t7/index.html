@@ -267,12 +267,19 @@
     }
     .urgency .perk {
       max-width: 460px;
-      margin: 20px auto 0;
+      margin: 20px auto 24px;
       font-size: 15px;
-      background: rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.22);
+      color: #fff;
       padding: 16px 18px;
       border-radius: 10px;
       line-height: 1.7;
+    }
+    .urgency .cta-btn {
+      background: #fff;
+      color: var(--accent-deep);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      font-weight: 700;
     }
 
     .benefits h2 { text-align: center; font-size: 26px; margin-bottom: 32px; }
@@ -484,7 +491,7 @@
       <h1>停電でも。事故でも。<br><span class="accent">この1本。</span></h1>
       <p class="tagline">照らす。知らせる。助ける。</p>
       <img src="images/main_66775.png" alt="TUNENGE T7 多機能防災ライト" class="hero-img" loading="eager">
-      <div class="hero-countdown" id="hero-countdown">読込中...</div>
+      <div class="hero-countdown" id="hero-countdown">5/7(木) 12:00 公開まで -- 日 -- 時間</div>
       <a href="https://line.me/R/ti/p/@549dwjsn" class="cta-btn" data-ga="hero_cta_click">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 2.6 1.6 5 4.1 6.5L5 20l3.4-1.8c1.1.3 2.3.5 3.6.5 5.5 0 10-3.7 10-8.2C22 5.7 17.5 2 12 2z" fill="currentColor"/></svg>
         LINEで公開通知を最速で受け取る
@@ -588,6 +595,10 @@
         <span class="limit">先着30名限定</span>
       </div>
       <p class="perk">事前にLINEで登録された方には、<br><strong>先着30名枠を一般公開前にLINEで先行通知</strong>します。</p>
+      <a href="https://line.me/R/ti/p/@549dwjsn" class="cta-btn" data-ga="urgency_cta_click">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 2.6 1.6 5 4.1 6.5L5 20l3.4-1.8c1.1.3 2.3.5 3.6.5 5.5 0 10-3.7 10-8.2C22 5.7 17.5 2 12 2z" fill="currentColor"/></svg>
+        LINEで先行通知を受け取る
+      </a>
     </div>
   </section>
 
@@ -715,8 +726,13 @@
       if (diff <= 0 || launchEnabled) {
         els.live.style.display = 'none';
         els.ended.style.display = 'block';
-        if (launchEnabled && MAKUAKE_URL && !MAKUAKE_URL.includes('PLACEHOLDER')) {
+        // Makuake URL は常にセット (diff<=0 で自動有効化)
+        // localStorage key は開発・手動プレビュー用 (任意)
+        if (MAKUAKE_URL && !MAKUAKE_URL.includes('PLACEHOLDER')) {
           els.makuakeCta.href = MAKUAKE_URL;
+          els.makuakeCta.textContent = 'Makuakeで支援する →';
+          els.makuakeCta.setAttribute('target', '_blank');
+          els.makuakeCta.setAttribute('rel', 'noopener');
         } else {
           els.makuakeCta.href = '#';
           els.makuakeCta.textContent = '公開準備中';
