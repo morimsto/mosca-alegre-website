@@ -143,26 +143,74 @@
     .solution h2 {
       text-align: center;
       font-size: 22px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
     .solution h2 .accent { color: var(--accent); }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    .feature-card {
+    /* Slideshow */
+    .slideshow {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      gap: 16px;
-      align-items: center;
     }
-    .feature-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
-    .feature-card .name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
-    .feature-card .why { font-size: 13px; color: var(--muted); }
+    .slides-track {
+      display: flex;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .slides-track::-webkit-scrollbar { display: none; }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      padding: 16px;
+      text-align: center;
+    }
+    .slide img {
+      width: 100%;
+      max-width: 360px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0 auto 14px;
+      display: block;
+    }
+    .slide .slide-title { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+    .slide .slide-why { font-size: 13px; color: var(--muted); min-height: 38px; }
+
+    .slides-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .slides-dots button {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0;
+    }
+    .slides-dots button.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .slide-counter {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: rgba(0,0,0,0.6);
+      color: var(--fg);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      z-index: 2;
+    }
     .pl-disclaimer {
       margin-top: 24px;
       font-size: 11px;
@@ -355,43 +403,27 @@
   <!-- SECTION: solution -->
   <section class="solution">
     <div class="container">
-      <h2>1本に、<span class="accent">5つの機能</span>。</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <img src="images/feature-window.png" alt="窓割り機能">
-          <div>
-            <div class="name">窓割り機能</div>
-            <div class="why">万が一の一秒が、命取り。</div>
-          </div>
+      <h2>1本に、<span class="accent">7つの魅力</span>。</h2>
+      <div class="slideshow" id="slideshow">
+        <div class="slide-counter"><span id="slide-current">1</span> / 7</div>
+        <div class="slides-track" id="slides-track">
+          <div class="slide"><img src="images/feature-window.png" alt="窓割り機能"><div class="slide-title">窓割り機能</div><div class="slide-why">万が一の一秒が、命取り。</div></div>
+          <div class="slide"><img src="images/feature-belt.png" alt="シートベルトカッター"><div class="slide-title">シートベルトカッター</div><div class="slide-why">その数秒を、支える構造。</div></div>
+          <div class="slide"><img src="images/feature-charge.png" alt="急速充電対応"><div class="slide-title">急速充電対応</div><div class="slide-why">非常時にスマホを支える。</div></div>
+          <div class="slide"><img src="images/feature-light.png" alt="高輝度LED"><div class="slide-title">高輝度LED</div><div class="slide-why">遠くまで、確かな視界。</div></div>
+          <div class="slide"><img src="images/feature-magnet.png" alt="マグネット吸着"><div class="slide-title">マグネット吸着</div><div class="slide-why">両手が使える、設置自在。</div></div>
+          <div class="slide"><img src="images/slide-ip65.png" alt="IP65 防塵防水"><div class="slide-title">IP65 防塵防水</div><div class="slide-why">突然の雨にも、動じない。</div></div>
+          <div class="slide"><img src="images/slide-usage.png" alt="多用途"><div class="slide-title">1本で完結する多用途設計</div><div class="slide-why">車載・防災・アウトドアに。</div></div>
         </div>
-        <div class="feature-card">
-          <img src="images/feature-belt.png" alt="シートベルトカッター">
-          <div>
-            <div class="name">シートベルトカッター</div>
-            <div class="why">その数秒を、支える構造。</div>
-          </div>
-        </div>
-        <div class="feature-card">
-          <img src="images/feature-charge.png" alt="急速充電機能">
-          <div>
-            <div class="name">急速充電対応</div>
-            <div class="why">非常時にスマホを支える。</div>
-          </div>
-        </div>
-        <div class="feature-card">
-          <img src="images/feature-light.png" alt="高輝度LED">
-          <div>
-            <div class="name">高輝度LED</div>
-            <div class="why">遠くまで、確かな視界。</div>
-          </div>
-        </div>
-        <div class="feature-card">
-          <img src="images/feature-magnet.png" alt="マグネット吸着">
-          <div>
-            <div class="name">マグネット吸着</div>
-            <div class="why">両手が使える、設置自在。</div>
-          </div>
-        </div>
+      </div>
+      <div class="slides-dots" id="slides-dots">
+        <button class="active" aria-label="1枚目" data-idx="0"></button>
+        <button aria-label="2枚目" data-idx="1"></button>
+        <button aria-label="3枚目" data-idx="2"></button>
+        <button aria-label="4枚目" data-idx="3"></button>
+        <button aria-label="5枚目" data-idx="4"></button>
+        <button aria-label="6枚目" data-idx="5"></button>
+        <button aria-label="7枚目" data-idx="6"></button>
       </div>
       <p class="pl-disclaimer">※本製品は補助的な安全補助用具です。使用環境・状況により機能しない場合があります。緊急時は専門機関にご連絡ください。</p>
     </div>
@@ -595,6 +627,64 @@
         gtag('event', 'line_register_complete', {});
       }
     }
+
+    // --- Slideshow control ---
+    (function() {
+      const track = document.getElementById('slides-track');
+      const dots = document.querySelectorAll('#slides-dots button');
+      const counter = document.getElementById('slide-current');
+      if (!track || !dots.length) return;
+      const TOTAL = dots.length;
+      let current = 0;
+      let autoTimer = null;
+      let userInteracted = false;
+
+      function goTo(idx) {
+        current = (idx + TOTAL) % TOTAL;
+        const slideWidth = track.clientWidth;
+        track.scrollTo({ left: slideWidth * current, behavior: 'smooth' });
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        if (counter) counter.textContent = current + 1;
+      }
+
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(() => {
+          if (!userInteracted) goTo(current + 1);
+        }, 4000);
+      }
+      function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+
+      // Dot clicks
+      dots.forEach(d => d.addEventListener('click', () => {
+        userInteracted = true;
+        goTo(parseInt(d.dataset.idx, 10));
+      }));
+
+      // Sync active dot on manual scroll
+      let scrollTimer = null;
+      track.addEventListener('scroll', () => {
+        userInteracted = true;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          const idx = Math.round(track.scrollLeft / track.clientWidth);
+          if (idx !== current) {
+            current = idx;
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            if (counter) counter.textContent = current + 1;
+          }
+        }, 120);
+      });
+
+      // Start autoplay when slideshow becomes visible
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !userInteracted) startAuto();
+          else stopAuto();
+        });
+      }, { threshold: 0.3 });
+      io.observe(document.getElementById('slideshow'));
+    })();
   </script>
 
 </body>
