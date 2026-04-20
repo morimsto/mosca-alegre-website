@@ -199,15 +199,21 @@
       margin: 0 auto;
       padding: 0 24px;
     }
-    .story-block h3 { font-size: 26px; margin-bottom: 14px; line-height: 1.45; }
+    .story-block h3 { font-size: 28px; margin-bottom: 16px; line-height: 1.5; }
     .story-block .story-lead {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--accent-deep);
       font-weight: 700;
-      letter-spacing: 0.22em;
-      margin-bottom: 12px;
+      letter-spacing: 0.28em;
+      margin-bottom: 14px;
     }
-    .story-block p { font-size: 16px; color: var(--fg-sub); margin-bottom: 28px; }
+    .story-block p {
+      font-size: 17px;
+      color: var(--fg-sub);
+      margin-bottom: 28px;
+      line-height: 1.9;
+    }
+    .story-block p strong { color: var(--fg); font-weight: 700; }
     .story-block img {
       width: 100vw;
       max-width: 100vw;
@@ -397,10 +403,11 @@
     details.faq-item[open] summary::after { content: "−"; }
     details.faq-item .faq-body {
       padding: 0 20px 18px;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--fg-sub);
-      line-height: 1.8;
+      line-height: 1.9;
     }
+    details.faq-item summary { font-size: 16px; }
 
     .cta-bottom {
       text-align: center;
@@ -474,9 +481,94 @@
     @media (min-width: 640px) {
       .hero h1 { font-size: 40px; }
       .hero .tagline { font-size: 17px; }
-      .story-block h3 { font-size: 28px; }
+      .story-block h3 { font-size: 32px; }
       .urgency .off { font-size: 72px; }
       section { padding: 88px 0; }
+    }
+
+    /* PC向け: 2カラム交互レイアウト */
+    @media (min-width: 880px) {
+      body { font-size: 18px; }
+      .container { max-width: 720px; }
+
+      .hero { padding: 88px 0 72px; }
+      .hero h1 { font-size: 52px; line-height: 1.3; }
+      .hero .tagline { font-size: 19px; }
+      .hero-img {
+        width: min(100vw, 1200px);
+        max-width: 1200px;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        border-radius: 20px;
+        margin-top: 16px;
+      }
+
+      .problem h2 { font-size: 34px; }
+      .problem p { font-size: 19px; max-width: 560px; }
+
+      /* story-block: 2カラム＋左右反転 */
+      .story-block {
+        padding: 96px 0;
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .story-block .text-block {
+        flex: 1 1 50%;
+        max-width: 500px;
+        padding: 0 32px;
+        margin: 0;
+      }
+      .story-block img {
+        flex: 1 1 50%;
+        width: 50%;
+        max-width: 560px;
+        margin: 0;
+        border-radius: 20px;
+      }
+      .story-block:nth-child(even) { flex-direction: row-reverse; }
+      .story-block h3 { font-size: 36px; line-height: 1.4; }
+      .story-block p { font-size: 17px; }
+
+      .story-pl-wrap { padding: 56px 24px 96px; }
+
+      .urgency h2 { font-size: 36px; }
+      .urgency .off { font-size: 88px; }
+      .urgency .limit { font-size: 22px; }
+
+      .benefits h2 { font-size: 34px; }
+      .benefit-list li { font-size: 16px; padding: 26px 26px 26px 76px; }
+      .benefit-list li::before { left: 24px; top: 26px; width: 40px; height: 40px; font-size: 18px; }
+      .benefit-list strong { font-size: 18px; }
+
+      .trust h2 { font-size: 30px; }
+      .trust .company-info { font-size: 17px; }
+
+      .countdown-section h2 { font-size: 28px; }
+      .countdown-display .unit { min-width: 96px; padding: 20px 16px; }
+      .countdown-display .num { font-size: 44px; }
+      .countdown-display .unit-label { font-size: 12px; }
+
+      .faq h2 { font-size: 30px; }
+      details.faq-item summary { font-size: 17px; padding: 22px 54px 22px 24px; }
+      details.faq-item .faq-body { font-size: 16px; padding: 0 24px 22px; }
+
+      .cta-bottom h2 { font-size: 34px; }
+      .cta-bottom p { font-size: 17px; }
+
+      .cta-btn { font-size: 18px; padding: 20px 32px; max-width: 420px; }
+      .floating-cta { padding: 14px 24px; }
+      .floating-cta .spec { font-size: 14px; }
+      .floating-cta .spec strong { font-size: 16px; }
+      .floating-cta .cta-btn { font-size: 15px; padding: 14px 24px; }
+    }
+
+    @media (min-width: 1200px) {
+      .story-block { max-width: 1200px; gap: 80px; }
+      .story-block h3 { font-size: 40px; }
     }
   </style>
 </head>
@@ -511,78 +603,60 @@
   <section class="story">
     <div class="story-block">
       <div class="text-block">
-        <div class="story-lead">1. MULTIPURPOSE</div>
-        <h3>多用途に活躍する、<br>ハイパワー設計。</h3>
-        <p>ハイキング、キャンプ、車載、防災まで。日常から緊急時まで支える1本。</p>
-      </div>
-      <img src="images/lp-01-hero-multipurpose.png" alt="多用途ハイパワー設計">
-    </div>
-
-    <div class="story-block">
-      <div class="text-block">
-        <div class="story-lead">2. CHARGE</div>
+        <div class="story-lead">01 / CHARGE</div>
         <h3>給電できるライト。<br>非常時の通信手段を、確保する。</h3>
-        <p>光るだけで終わらせない。USB Type-C対応で、スマホや小型機器の給電に対応。暗闇の中で、状況を立て直すための1本。</p>
+        <p>光るだけで終わらせない。USB Type-C対応で、スマホや小型機器への給電に対応。家庭用アダプター・モバイルバッテリー・車内電源、どこからでも充電できます。</p>
       </div>
-      <img src="images/lp-02-charge.png" alt="給電機能">
+      <img src="images/story-02-charge.png" alt="USB Type-C 給電・充電対応">
     </div>
 
     <div class="story-block">
       <div class="text-block">
-        <div class="story-lead">3. WINDOW BREAKER</div>
-        <h3>窓割り機能。<br>その数秒を、支える構造。</h3>
-        <p>押し込み式で作動ピンを内蔵。不使用時は内部に収納され、必要なときだけ確実に機能します。</p>
+        <div class="story-lead">02 / EMERGENCY ESCAPE</div>
+        <h3>その数秒を、<br>支える構造。</h3>
+        <p>T7には緊急時を想定した<strong>2つの脱出機能</strong>を搭載。<br>■ <strong>ウィンドウブレーカー</strong>：押し込み式の作動ピンを内蔵。不使用時は内部に収納。<br>■ <strong>シートベルトカッター</strong>：不意の接触によるケガに配慮した保護構造。</p>
       </div>
-      <img src="images/lp-03-window.png" alt="ウィンドウブレーカー機能">
+      <img src="images/story-03-escape.png" alt="緊急脱出機能 - 窓割り・ベルトカッター">
     </div>
 
     <div class="story-block">
       <div class="text-block">
-        <div class="story-lead">4. SEATBELT CUTTER</div>
-        <h3>シートベルトカッター。<br>不意のケガに配慮した保護構造。</h3>
-        <p>必要なときだけ確実に機能する保護設計。普段使いでの安全性に配慮されています。</p>
+        <div class="story-lead">03 / ZOOM</div>
+        <h3>無段階ズーム。<br>用途に応じて、直感的に。</h3>
+        <p>広く照らす。遠くを狙う。広角から遠距離まで、手元で直感的に調整できる設計。夜間屋外でも、確かな視界を確保します。</p>
       </div>
-      <img src="images/lp-04-belt.png" alt="シートベルトカッター">
+      <img src="images/story-04-zoom.png" alt="無段階ズーム">
     </div>
 
     <div class="story-block">
       <div class="text-block">
-        <div class="story-lead">5. HIGH-OUTPUT LIGHT</div>
-        <h3>夜の奥まで届く、<br>高輝度ライト。</h3>
-        <p>夜間の屋外でも、確かな視界を確保。遠方までしっかり届く、信頼の照射性能。</p>
+        <div class="story-lead">04 / COLOR MODE</div>
+        <h3>状況に合わせて、<br>光を選ぶ。</h3>
+        <p>遠くを照らす光。手元を照らす光。存在を知らせる光。必要な場面に、必要な色と明るさを。</p>
       </div>
-      <img src="images/lp-05-light.png" alt="高輝度LED">
+      <img src="images/story-05-color.png" alt="光色切替">
     </div>
 
     <div class="story-block">
       <div class="text-block">
-        <div class="story-lead">6. MAGNET</div>
-        <h3>マグネット吸着。<br>両手が使える、設置自在。</h3>
-        <p>取り外せるマグネットスタンド。車体や金属面に固定し、作業に集中できる1本。テント内や枝に掛けてランタンとしても。</p>
+        <div class="story-lead">05 / MAGNET</div>
+        <h3>両手が使える、<br>設置自在。</h3>
+        <p>金属面に吸着できるマグネット構造。車のボンネット裏、ガレージ、金属ラックに固定。両手を空けたまま、必要な場所を照らせます。</p>
       </div>
-      <img src="images/lp-06-magnet.png" alt="マグネット吸着">
+      <img src="images/story-06-magnet.png" alt="マグネット吸着">
     </div>
 
     <div class="story-block">
       <div class="text-block">
-        <div class="story-lead">7. IP65 DUST &amp; WATER RESISTANT</div>
-        <h3>突然の雨にも、<br>動じない。</h3>
-        <p>IP65相当の防塵・防水設計。屋外作業・アウトドア・災害時まで、安定した性能を発揮します。</p>
+        <div class="story-lead">06 / STAND</div>
+        <h3>手持ちにも、<br>設置型にも。</h3>
+        <p>ブラケットは取り外し可能。マグネットスタンドは分離式で、手持ちライトとしても、設置型ライトとしても使い分けができます。</p>
       </div>
-      <img src="images/lp-07-waterproof.png" alt="IP65 防塵防水">
-    </div>
-
-    <div class="story-block">
-      <div class="text-block">
-        <div class="story-lead">8. STOCKPILE</div>
-        <h3>守るなら、<br>分けて備える。</h3>
-        <p>自宅用・車載用・家族で1本ずつ。複数本の備蓄で、いざという日の安心感が格段に変わります。</p>
-      </div>
-      <img src="images/lp-08-storage.png" alt="複数備蓄の提案">
+      <img src="images/story-08-stand.png" alt="マグネットスタンド分離式">
     </div>
 
     <div class="story-pl-wrap">
-      <p class="pl-disclaimer">※本製品は補助的な安全補助用具です。使用環境・状況により機能しない場合があります。緊急時は専門機関にご連絡ください。</p>
+      <p class="pl-disclaimer">※本製品は補助的な安全補助用具です。使用環境・状況により機能しない場合があります。緊急時は専門機関にご連絡ください。<br>※IP65相当の防塵・防水設計。</p>
     </div>
   </section>
 
