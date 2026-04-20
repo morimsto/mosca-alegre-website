@@ -122,16 +122,14 @@
     .hero h1 .accent { color: var(--accent-deep); }
     .hero .tagline { font-size: 15px; color: var(--fg-sub); margin-bottom: 32px; }
     .hero-img {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      max-width: 100vw;
-      box-shadow: var(--shadow-md);
-      margin-bottom: 28px;
+      display: block;
+      width: calc(100% + 48px);
+      max-width: calc(100% + 48px);
+      margin-left: -24px;
+      margin-right: -24px;
       margin-top: 8px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-md);
     }
     .hero-countdown {
       background: var(--bg-alt);
@@ -225,8 +223,9 @@
     }
     .story-block p strong { color: var(--fg); font-weight: 700; }
     .story-block img {
-      width: 100vw;
-      max-width: 100vw;
+      display: block;
+      width: 100%;
+      max-width: 100%;
       margin: 0;
       box-shadow: var(--shadow-sm);
     }
@@ -505,16 +504,17 @@
       .hero h1 { font-size: 52px; line-height: 1.3; }
       .hero .tagline { font-size: 19px; }
       .hero-img {
-        width: min(100vw, 1200px);
-        max-width: 1200px;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
-        border-radius: 20px;
+        width: calc(100% + 48px);
+        max-width: calc(100% + 48px);
+        margin-left: -24px;
+        margin-right: -24px;
         margin-top: 16px;
+        border-radius: 20px;
       }
 
       .problem .container {
         display: flex;
+        flex-direction: row-reverse;
         align-items: center;
         gap: 64px;
         max-width: 1100px;
@@ -621,7 +621,7 @@
         <h2>停電。光ではない。<br>通信が止まる不安。</h2>
         <p>突然、部屋が静まり返る。頼りにしていたのはスマートフォン。減っていくバッテリー残量。<br>そのとき感じるのは暗さではなく「つながれなくなる不安」。</p>
       </div>
-      <img src="images/problem-banner.png" alt="停電。光ではない。通信が止まる不安。" class="problem-img">
+      <img src="images/problem-banner-hires.png" alt="停電。光ではない。通信が止まる不安。" class="problem-img">
     </div>
   </section>
 
