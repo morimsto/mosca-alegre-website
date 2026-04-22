@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tunenge-t7/index.v1-backup.html
+
+Sitemap: https://mosca-alegre.com/sitemap.xml
