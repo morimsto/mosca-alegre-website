@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketCloud 海外レビュー集 — 世界のTechメディアが評価したポータブルNAS</title>
+  <meta name="description" content="NAS専門メディア NASCompares を筆頭に、海外の Tech YouTuber・クリエイター10名が実機で検証。PocketCloud のリアルな使用感を日本語でお届けします。">
+  <meta property="og:title" content="PocketCloud 海外レビュー集 | Mosca Alegre">
+  <meta property="og:description" content="世界のTechメディア・クリエイター10名が実機検証。海外 CF で1,117名が支援した携帯型NASの評価をまとめました。">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../images/favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 40px;
+      border: 1px solid var(--border);
+    }
+    .review-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+    .reviewer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .badge-youtube { background: #FFE9E9; color: #C62828; }
+    .badge-instagram { background: #F3E5F5; color: #6A1B9A; }
+    .badge-priority { background: #E8F4FD; color: #0D47A1; }
+    .reviewer-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+    .reviewer-meta {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin: 2px 0 0;
+    }
+    .review-body { padding: 24px; }
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .summary-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .summary-points {
+      padding-left: 0;
+      margin: 0 0 16px;
+    }
+    .summary-points li {
+      display: flex;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .summary-points li:last-child { border-bottom: none; }
+    .summary-points li::before {
+      content: "▶";
+      color: var(--accent);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .quote-block {
+      background: #F4F0E8;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+    .quote-block p {
+      font-style: italic;
+      color: var(--text);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 0 0 6px;
+    }
+    .quote-block cite {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: normal;
+    }
+    .ig-embed-wrap {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .ig-screenshot {
+      width: 200px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      aspect-ratio: 9/16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+      padding: 12px;
+    }
+    .ig-content { flex: 1; }
+    .ig-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 12px;
+      transition: background var(--transition);
+    }
+    .ig-link-btn:hover { background: var(--primary-light); }
+    .section-intro {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 32px 0;
+    }
+    .stat-item {
+      text-align: center;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      border: 1px solid var(--border);
+      min-width: 140px;
+    }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, #0D2A47 100%);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner p { color: rgba(255,255,255,0.75); margin: 12px 0 24px; }
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background var(--transition);
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .disclaimer {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      background: var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    @media (max-width: 640px) {
+      .ig-embed-wrap { flex-direction: column; }
+      .ig-screenshot { width: 100%; aspect-ratio: 4/3; }
+      .stats-bar { gap: 12px; }
+      .stat-item { min-width: 120px; padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><img src="../images/paw-icon.png" alt="" class="logo-icon">Mosca Alegre</a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../track-record.html">Track Record</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="page-header" style="padding-top: 120px;">
+    <div class="container">
+      <p class="section-label">PocketCloud 海外レビュー</p>
+      <h1>世界のTechメディアが語る<br>PocketCloud</h1>
+      <p style="font-size:1.05rem; max-width:600px; margin:16px auto 0;">
+        NAS専門メディア・テック系YouTuber・クリエイター計10名が実機を検証。<br>
+        海外クラウドファンディングで1,117名のユーザーが選んだ携帯型NASの実力を、日本語でお届けします。
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="padding: 40px 0 0;">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">1,117</div>
+          <div class="stat-label">海外 CF 支援者数<br><small>※メーカー集計値</small></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-label">YouTube<br>レビュー動画</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Instagram<br>クリエイター投稿</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">◎◎</div>
+          <div class="stat-label">NAS専門メディア<br>最高評価</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Main -->
+  <section>
+    <div class="container">
+      <div class="section-intro">
+        <p class="section-label">独立レビュー</p>
+        <h2>YouTube 動画レビュー</h2>
+        <p>Mosca Alegre が依頼・監修したものではない、独立した第三者評価です。</p>
+      </div>
+
+      <!-- 1. NASCompares -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-youtube">YouTube</span>
+              <span class="reviewer-badge badge-priority">NAS専門メディア</span>
+            </div>
+            <p class="reviewer-name">NASCompares — Robbie 氏</p>
+            <p class="reviewer-meta">"PocketCloud NAS Review (The StationPC Portable NAS Drive)"</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/hTkSedFVXzY"
+              title="PocketCloud NAS Review — NASCompares"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>NAS専門レビューメディア NASCompares が PocketCloud を「ポータブルNAS」という新カテゴリの製品として正式レビュー</li>
+            <li>既存の据置型NAS（Synology / QNAP 等）との違い・想定ユースケース・購買判断軸を整理した網羅的な評価</li>
+            <li>バッテリー駆動で外に持ち出せるNASというコンセプトの妥当性を、NAS業界専門家の視点から認定</li>
+            <li>M.2 NVMe SSD 2スロット構成によるストレージ拡張性と、WiFi 6 接続の実効速度を検証</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. ElectronicsWizardry -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-youtube">YouTube</span>
+              <span class="reviewer-badge" style="background:#E8F5E9;color:#1B5E20;">限界性能検証</span>
+            </div>
+            <p class="reviewer-name">ElectronicsWizardry — Brandon 氏</p>
+            <p class="reviewer-meta">"StationPC Pocket Cloud Review: Testing the limits of a new portable NAS."</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/Gnt4hr442NI"
+              title="StationPC Pocket Cloud Review — ElectronicsWizardry"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>ホームラボ・自作PC系チャンネル ElectronicsWizardry が「新カテゴリのポータブルNASの限界を試す」スタイルでレビュー</li>
+            <li>USB-C 10Gbps・WiFi 6・NVMe 2スロットという公称スペックが実測でどこまで通用するかを徹底検証</li>
+            <li>連続稼働時の発熱管理と18650バッテリーのホットスワップ運用を実際に評価</li>
+            <li>「ガジェットとしてではなくストレージデバイスとしての地力」を見極める玄人向け視点の評価</li>
+          </ul>
+          <div class="quote-block">
+            <p>"Testing the limits of a new portable NAS."</p>
+            <cite>— ElectronicsWizardry（訳: 新世代ポータブルNASの限界を試す）</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Tech Critter -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-youtube">YouTube</span>
+              <span class="reviewer-badge" style="background:#E3F2FD;color:#0D47A1;">実使用体験</span>
+            </div>
+            <p class="reviewer-name">Tech Critter</p>
+            <p class="reviewer-meta">"StationPC Pocket Cloud User Experience"</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/-FZv6fraSpo"
+              title="StationPC Pocket Cloud User Experience — Tech Critter"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>東南アジア拠点の Tech Critter チャンネルが PocketCloud を実際の使用体験ベースで評価</li>
+            <li>スペック数値ではなく「カバンに入れて毎日持ち歩いた時の使い勝手」に焦点を当てたレビュー</li>
+            <li>WiFi 接続安定性・初期セットアップの容易さ・バッテリー駆動の実感値を中心に評価</li>
+            <li>NAS未経験者でも扱える操作性が、実機使用を通じて確認された</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Technically Unsure -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-youtube">YouTube</span>
+              <span class="reviewer-badge" style="background:#FFF3E0;color:#E65100;">ハンズオン</span>
+            </div>
+            <p class="reviewer-name">Technically Unsure</p>
+            <p class="reviewer-meta">"Pocket-Sized Marvel: Hands-On with the StationPC Portable NAS"</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/nKYIqQTaaPI"
+              title="Pocket-Sized Marvel: Hands-On with the StationPC Portable NAS — Technically Unsure"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>「ポケットに入る驚き」をテーマに、NAS未経験層に向けてハンズオンで紹介</li>
+            <li>実機を触って感じた「思ったより小さい・操作が簡単・設定がシンプル」を実演ベースで解説</li>
+            <li>「初めてのNAS」としてのアクセシビリティを評価するスタイル — テック初心者にも分かりやすい内容</li>
+          </ul>
+          <div class="quote-block">
+            <p>"Pocket-Sized Marvel: Hands-On with the StationPC Portable NAS"</p>
+            <cite>— Technically Unsure（訳: ポケットサイズの逸品 ─ StationPC ポータブルNAS ハンズオン）</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram section -->
+      <div class="section-intro" style="margin-top:60px;">
+        <p class="section-label">クリエイター評価</p>
+        <h2>Instagram クリエイター投稿</h2>
+        <p>フォトグラファー・映像クリエイターが、現場で使用した実感を発信。</p>
+      </div>
+
+      <!-- 5. Dean Wethers -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-instagram">Instagram</span>
+              <span class="reviewer-badge badge-priority">認証済みアカウント</span>
+            </div>
+            <p class="reviewer-name">Dean Wethers（@deanwethers）</p>
+            <p class="reviewer-meta">認証済みフォトグラファー・映像クリエイター</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>認証済みクリエイターが「フラッシュドライブで撮影素材を何度も失ってきた」というリアルな痛点から語り始める</li>
+            <li>PocketCloud で「撮影現場でどこでもバックアップ → 帰宅後はドックして二次バックアップ → 世界中からアクセス可能」というデュアルバックアップ運用を実現</li>
+            <li>「リモート撮影をしてスタジオに戻った時に安心したいクリエイターに最適」と評価</li>
+          </ul>
+          <div class="quote-block">
+            <p>"I used to lose footage saving everything on random flash drives. This completely fixed that. PocketCloud is a portable NAS I can back up to anywhere, then dock at home to create a second backup I can access from anywhere in the world."</p>
+            <cite>— Dean Wethers（訳: 「以前は撮影素材を適当なフラッシュドライブに保存して何度も失っていた。PocketCloud がそれを完全に解決してくれた」）</cite>
+          </div>
+          <a href="https://www.instagram.com/reel/DSjC1ViDGsL/" target="_blank" rel="noopener noreferrer" class="ig-link-btn">
+            Instagram で投稿を見る →
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. cosey_cameras -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-instagram">Instagram</span>
+              <span class="reviewer-badge" style="background:#E8F5E9;color:#1B5E20;">クリエイター向け</span>
+            </div>
+            <p class="reviewer-name">cosey_cameras（@cosey_cameras）</p>
+            <p class="reviewer-meta">フォトグラファー・映像クリエイター</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>「クリエイターのゲームを変えるかもしれない一台」として PocketCloud を紹介</li>
+            <li>NVMe SSD 2スロット・WiFi 6＋USB-C 10Gbps・ホットスワップバッテリー・SDカード対応を強調</li>
+            <li>写真家・映像作家・クリエイターに向けた「シンプルで初めてのNAS」として位置付け</li>
+          </ul>
+          <div class="quote-block">
+            <p>"Your first NAS made simple, built for photographers, filmmakers, and creators who need reliable storage anywhere."</p>
+            <cite>— cosey_cameras（訳: 「写真家・映像作家・どこでも信頼できるストレージを必要とするクリエイターのために設計された、シンプルで初めてのNAS」）</cite>
+          </div>
+          <a href="https://www.instagram.com/reel/DPRSad_jRaV/" target="_blank" rel="noopener noreferrer" class="ig-link-btn">
+            Instagram で投稿を見る →
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. review_samo -->
+      <div class="review-card">
+        <div class="review-card-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="reviewer-badge badge-instagram">Instagram</span>
+              <span class="reviewer-badge" style="background:#FFF3E0;color:#E65100;">バックアップ訴求</span>
+            </div>
+            <p class="reviewer-name">review_samo（@review_samo）</p>
+            <p class="reviewer-meta">ガジェットレビューアカウント</p>
+          </div>
+        </div>
+        <div class="review-body">
+          <p class="summary-title">日本語サマリー</p>
+          <ul class="summary-points">
+            <li>「究極のバックアップソリューション」として PocketCloud を端的に評価</li>
+            <li>高速SSDセットアップ・セキュアな保管・ワンクリックアクセスの3点を強みとして整理</li>
+            <li>「データを安全に・整理された状態で・いつでもどこでも使える」状態を保つツールとして位置付け</li>
+          </ul>
+          <div class="quote-block">
+            <p>"PocketCloud – Your Ultimate Backup Solution! Easily back up your files with fast SSD setup, secure storage, and simple one-click access."</p>
+            <cite>— review_samo（訳: 「PocketCloud ── 究極のバックアップソリューション。高速SSDセットアップ、セキュアな保管、シンプルなワンクリックアクセスで、ファイルバックアップが簡単に」）</cite>
+          </div>
+          <a href="https://www.instagram.com/p/DQRdeIDjacc/" target="_blank" rel="noopener noreferrer" class="ig-link-btn">
+            Instagram で投稿を見る →
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-banner">
+        <h2>PocketCloud を Makuake で先行支援</h2>
+        <p>海外で1,117名が実機を手にした携帯型NAS。<br>日本初登場・Makuake 限定の先行価格でお届けします。</p>
+        <!-- Makuake URL確定後に差し替え -->
+        <a href="#" class="btn-primary">Makuake キャンペーンページを見る →</a>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.75rem; margin-top:16px;">※ Makuake URL は公開後に更新されます</p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <p>※上記は海外クリエイター・レビュアーの独立した評価であり、Mosca Alegre が依頼・報酬提供・監修したものではありません。</p>
+        <p>※海外クラウドファンディングの実績（支援者数1,117名）は、本 Makuake プロジェクトのリターン提供を保証するものではありません。</p>
+        <p>※動画・投稿内容の引用は著作権法第32条（引用の要件）に基づき、出典明記・必要最小限の範囲で行っています。</p>
+        <p>※支援者数はメーカー（StationPC Inc.）の集計値です。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--primary); color:rgba(255,255,255,0.6); padding:32px 0; margin-top:0; font-size:0.85rem;">
+    <div class="container" style="text-align:center;">
+      <p>© 2026 Mosca Alegre LLC — <a href="../index.html" style="color:rgba(255,255,255,0.8);">mosca-alegre.com</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
