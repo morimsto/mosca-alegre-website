@@ -211,6 +211,7 @@
     .hero h1 .accent { color: var(--accent); }
     .hero .tagline { font-size: 15px; color: var(--fg-sub); margin-bottom: 30px; }
     .hero-media {
+      position: relative;
       width: 100vw; max-width: 1000px;
       margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
       margin-top: 8px; margin-bottom: 30px;
@@ -292,7 +293,6 @@
       border-radius: 20px;
       box-shadow: var(--shadow-sm);
     }
-    .story-block.warn .section-label { color: var(--warn); }
     .story-block .story-lead {
       font-size: 13px;
       color: var(--accent);
@@ -306,6 +306,8 @@
     .story-block p { font-size: 17px; color: var(--fg-sub); margin-bottom: 22px; line-height: 1.95; }
     .story-block p strong { color: var(--fg); font-weight: 700; }
     .story-block .cta-btn { margin-top: 10px; }
+    .story-pl-wrap { padding: 32px 0 56px; }
+    .story-pl-wrap .pl-disclaimer { font-size: 13px; color: var(--fg-muted); line-height: 1.7; }
 
     /* disclaimer-note: SS1/SS3/SS4 duplicate the in-image footnote in HTML so it survives any crop.
        Font-size/contrast are fixed values (Critique Round1 P3 requirement), not derived from the heading. */
@@ -713,7 +715,9 @@
     </div>
 
     <div class="story-pl-wrap">
-      <p class="pl-disclaimer">※本製品はプライベートクラウドストレージ製品です。実際の保存容量・転送速度はメーカー公表のlab条件参考値であり、実運用は接続環境・機器構成により異なります。</p>
+      <div class="container">
+        <p class="pl-disclaimer">※本製品はプライベートクラウドストレージ製品です。実際の保存容量・転送速度はメーカー公表のlab条件参考値であり、実運用は接続環境・機器構成により異なります。</p>
+      </div>
     </div>
   </section>
 
