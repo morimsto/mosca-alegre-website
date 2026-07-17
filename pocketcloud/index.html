@@ -918,10 +918,21 @@
             'utm_source': params.get('utm_source') || 'direct'
           });
         }
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'LineCTAClick', {
+            'cta_location': ev,
+            'utm_source': params.get('utm_source') || 'direct'
+          });
+        }
       });
     });
-    if (params.get('submitted') === '1' && typeof gtag === 'function') {
-      gtag('event', 'line_register_complete', {});
+    if (params.get('submitted') === '1') {
+      if (typeof gtag === 'function') {
+        gtag('event', 'line_register_complete', {});
+      }
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
     }
 
     /* ---------- Scroll reveal engine ---------- */
